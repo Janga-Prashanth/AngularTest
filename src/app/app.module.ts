@@ -10,8 +10,7 @@ import { TesterComponent } from './tester/tester.component';    //child to paren
 import { FindService } from './find.service';                  //services
 import { ProductsService } from './products.service';           //route-parameters
 import { HttpClientModule } from '@angular/common/http';                 //to get response from http server
-import { HttpreqsComponent } from './httpreqs/httpreqs.component';         //http requests
-import { NgcontentComponent } from './content/ngcontent.component';       //ng-content 
+import { NgcontentComponent } from './ngcontent/ngcontent.component';       //ng-content 
 import { ContainerComponent } from './container/container.component';     //ng-container
 
 
@@ -20,7 +19,6 @@ import { ContainerComponent } from './container/container.component';     //ng-c
     AppComponent,
     HeaderComponent,
     TesterComponent,
-    HttpreqsComponent,
     NgcontentComponent,
     ContainerComponent,
   ],

@@ -1,5 +1,9 @@
 <p>container works!</p>
 
 <ng-container *ngFor="let m of [12,14,18,29,24,81]">
-    <div *ngIf="m%2==0">{{m}}</div>
+    <ng-container *ngIf='m<20'>
+        <ng-container *ngIf="m%2==0">
+            <div>{{m}}</div>
+        </ng-container>
+    </ng-container>
 </ng-container>
