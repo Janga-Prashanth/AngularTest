@@ -15,4 +15,6 @@ export class ProductsService {
     {id:4, name:'Deomon', gender:'M', age:38, series:'HOD'},
     {id:5, name:'Gohan', gender:'M', age:30, series:'DBZ'},
     ]
+
+    countries:Array<string>=["Ind","Pak","Aus","USA"]
 }

@@ -1,32 +1,32 @@
-<h3>Data Binding</h3>
-<h3>String interploation</h3>
+<h5>Data Binding</h5>
+<h5>String interploation</h5>
 <p>{{defination}}</p>
 <p>{{test()}}</p>
 
-<h3>Property Binding</h3>
+<h5>Property Binding</h5>
 <input type="text" [placeholder]="placehv" [hidden]="isdisabled">   <!--style="visibility: hidden;"-->
 
-<h3>Class Binding</h3>
+<h5>Class Binding</h5>
 <p [class] = "setClass()"> GeeksforGeeks</p>
 <div [class]="isactive?'active':'inactive'">Colour will change by class depends on condition</div>    
 
-<h3 [style]="{color:colorV}">Style Binding</h3>  <!--[style]="{color:color}" or style="color: red;" -->
-<h4 [style.font-size]="fsize">Style Binding2</h4>
+<h5 [style]="{color:colorV}">Style Binding</h5>  <!--[style]="{color:color}" or style="color: red;" -->
+<h6 [style.font-size]="fsize">Style Binding2</h6>
 
-<h3>Event Binding</h3>
+<h5>Event Binding</h5>
 <p>Counter: {{countervalue}}</p>
 <button (click)="increament()">Increment</button>
 <button (click)="decreament()">Decreament</button>
 
-<h3>Two Way Data Binding</h3>
+<h5>Two Way Data Binding</h5>
 City:<input type="text" name="value" [(ngModel)]="CityName">   <!--Nedd to import form model in app.module first-->
 <button type="reset" (click)="Cityreset()">Update</button>
 <p>{{CityName}}</p>  <!--This value coming from typescript file-->
 
-<h3><u>Directives</u></h3>
+<h5><u>Directives</u></h5>
 
-<h3>1.Structural Directives</h3>
-<h3>1.ngIf</h3>
+<h5>1.Structural Directives</h5>
+<h5>1.ngIf</h5>
 <p *ngIf="!Capitals" else sample>{{Capitals}}</p>
 <ng-template #sample>Helo world</ng-template>
 
@@ -34,7 +34,7 @@ City:<input type="text" name="value" [(ngModel)]="CityName">   <!--Nedd to impor
 <ng-template #load>Hello World2</ng-template>
 <ng-template #sample2>{{Capitals}}</ng-template>
 
-<h3>2.ngFor</h3>
+<h5>2.ngFor</h5>
 <table border="1">
     <tr>
         <td>Brand</td>
@@ -54,7 +54,8 @@ City:<input type="text" name="value" [(ngModel)]="CityName">   <!--Nedd to impor
     </tr>
 </table>
 
-<h3>3.ngSwitch</h3>
+<hr>
+<h5>3.ngSwitch</h5>
 Operation Type: <input type="text" [(ngModel)]="op">   <!--using two way Data Binding-->
 <p>{{op}}</p>
  <div [ngSwitch]="op">
@@ -65,20 +66,23 @@ Operation Type: <input type="text" [(ngModel)]="op">   <!--using two way Data Bi
     <div *ngSwitchCase="'%'">{{num1}}%{{num2}}={{num1%num2}}</div>
     <div *ngSwitchDefault="">Invalid Operation</div>
 </div> 
+<hr>
 
-<h3>2.Attribute Directives</h3>
-<h3>ngClass</h3>
-    <div><div [ngClass]="{'changebackground' : ngtestclass === ''}">This directive dynamically binds one or more CSS classes to an HTML element</div>
-        <input type="text" name="" id="ngClassstestt" placeholder="type to apply ndClass properties" [(ngModel)]="ngtestclass">   
-    </div>
+<h5>2.Attribute Directives</h5>
+<h5>ngClass</h5>
+<div><div [ngClass]="{'changebackground' : ngtestclass === ''}">This directive dynamically binds one or more CSS classes to an HTML element</div>
+    <input type="text" name="" id="ngClassstestt" placeholder="type to apply ndClass properties" [(ngModel)]="ngtestclass">   
+</div>
 
-<h3>ngStyle</h3>
+<hr>
+<h5>ngStyle</h5>
 <div><button [ngStyle]="AddButtonCSSStyles()">Click Me </button></div>
 <div *ngFor='let s of students'>
     <span [ngStyle] ="{'background-color':s.Gender === 'Male' ? 'red' : 'green'}">Name : {{s.Name}}, Gender: {{s.Gender}}, Branch: {{s.Branch}}</span>       
  </div>
 
-<h3>Pipes</h3>
+<hr>
+<h5>Pipes</h5>
 <p class="text-capitalize">{{who | uppercase }}</p>
 <p>{{who | titlecase }}</p>
 <p>{{who | lowercase }}</p>
@@ -91,35 +95,36 @@ Operation Type: <input type="text" [(ngModel)]="op">   <!--using two way Data Bi
 <p>{{company}}</p>
 <p>{{company | slice:0:7}}</p>
 
-<h3>Template Reference Variable</h3>
+<hr>
+<h5>Template Reference Variable</h5>
 <input type="text" class="ipelm abf nav" id="elmip" value="@peopletech.com" #trvar>
 <p>Value:{{trvar.value}} || id:{{trvar.id}} ||list:{{trvar.classList}}</p>
-
-<h3>Component Communication</h3>
-<h3>1.Parent to Child</h3>
-<h4>By using @Input()</h4>      <!--Header component-->
-
-<p>{{Pdata}} (Parent Component)</p>
-<app-header [d1]="Pdata" [p1]="Parr"></app-header>     <!--Binding the child element(header) to parent element(app)-->
-
-<app-header [d1]="Pdata2" [p1]="Parr2"></app-header>   <!--Can assign diff values n no. of times to a single property-->
-
-<h3>2.Child To parent</h3>                            <!--Tester Component-->
-<h4>a.By using @Output() & EventEmitter</h4>
-
-<app-tester (msgEvent)="Pmessage=$event"></app-tester>   <!--Ignore the #tester property in this tag it is for next type-->
-{{Pmessage}}    <!--    Output and EventEmmittor value -->
-
-<h4>b.By using Temlate Reference Variable</h4>
-<app-tester  #testerr></app-tester> 
-<div>{{testerr.demoValue}}</div>
-<!--<div>{{testerr.Cmessage}}</div>-->
-
-<h4>c.By using Viewchild Decorator</h4>
-<button (click)="wasre">ViewChild Data</button>
 <hr>
 
-<h3>ng-content</h3>
+<h5>Component Communication</h5>
+<h5>1.Parent to Child</h5>
+<h6>By using @Input()</h6>      <!--Header component-->
+<p>{{Pdata}} (Parent Component)</p>
+<app-header [d1]="Pdata" [p1]="Parr"></app-header>     <!--Binding the child element(header) to parent element(app)-->
+<app-header [d1]="Pdata2" [p1]="Parr2"></app-header>   <!--Can assign diff values n no. of times to a single property-->
+
+<hr>
+<h5>2.Child To parent</h5>                            <!--Tester Component-->
+<h6>a.By using @Output() & EventEmitter</h6>
+<app-tester (msgEvent)="Pmessage=$event" #testerr></app-tester>   <!--Ignore the #tester property in this tag it is for next type-->
+Message:{{Pmessage}}    <!--    Output and EventEmmittor value -->
+
+<hr>
+<h6>b.By using Temlate Reference Variable</h6>
+<div>{{testerr.demoValue}}</div>
+<div>{{testerr.Cmessage}}</div>
+<hr>
+
+<h6>c.By using Viewchild Decorator</h6>
+<button (click)="show()">ViewChild Data</button>
+<hr>
+
+<h5>ng-content</h5>
 <app-ngcontent>
     ng-content is used as a placeholder   <!--needs to place <ng-content></ng-content> in child component to display -->
     <div>{{nggreet}}</div>
@@ -127,5 +132,11 @@ Operation Type: <input type="text" [(ngModel)]="op">   <!--using two way Data Bi
 <hr>
 <!-- <app-ngcontent select=".app1">Rick</app-ngcontent> -->
 <!-- <app-ngcontent select=".app2">DAryl</app-ngcontent> -->
-<h3>ng_container</h3>
+<h5>ng_container</h5>
 <app-container></app-container>
+<hr>
+<h5>Life Cycle Hooks</h5>
+<h6>1.constructor:</h6><p>Invoked when angular creates component</p>
+<hr>
+<h6>2.ngOnChange</h6>
+<app-home></app-home>

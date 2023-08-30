@@ -42,7 +42,7 @@ export class AppComponent {
     this.CityName="delhi";
   }
   
-  Capitals="";     
+  Capitals="";
   // Capitals=["Chennai","Mumbai","Bangloor"];      //*ngIf
 
   Mobiles=["Apple","Xiaomi","Samsung","Iq","Nothig"];     //*ngFor
@@ -63,16 +63,9 @@ export class AppComponent {
     return CssStyless;
   }
 
-  students: any[] = [
-    {
-        Name: 'Preety', Branch: 'CSE', Gender: 'Female'
-    },
-    {
-        Name: 'Anurag', Branch: 'ETC', Gender: 'Male'
-    },
-    {
-        Name: 'Priyanka', Branch: 'CSE',  Gender: 'Female'
-    }
+  students: any[] = [{Name: 'Preety', Branch: 'CSE', Gender: 'Female'},
+    {Name: 'Anurag', Branch: 'ETC', Gender: 'Male'},
+    { Name: 'Priyanka', Branch: 'CSE',  Gender: 'Female'}
   ]; 
   
   who="janga Prashanth REDDY"      //Pipes
@@ -81,21 +74,18 @@ export class AppComponent {
   cgpa=0.62;
   company="Peopletech"
 
-  Pdata="example of Ip decorator1"   // parent to child
-
-  Parr=[10,20,30,40,50];             //@Input()
-
-  Pdata2="example of Ip decorator2"
-
+  Pdata="Input decorator1"   // parent to child using @Input()
+  Parr=[10,20,30,40,50];
+  Pdata2="Input decorator2"
   Parr2=[100,200,300,400,500];
 
-  Pmessage: any;          //Child to  parent
+  Pmessage: any;          //Child to  parent(First Method)
 
   @ViewChild(TesterComponent) wasre: any   //Injecting the child component decorator in parent
 
   show(){
-    return this.wasre.vcvalue;
-    console.log(this.wasre.vcvalue)
+    return this.wasre.vcd;
+    console.log(this.wasre.vcd)
   }
 
   nggreet="my greetings"
