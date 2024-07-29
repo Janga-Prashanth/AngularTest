@@ -8,51 +8,67 @@ import { TesterComponent } from './tester/tester.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  defination:string="{String interpolation is used to display dynamic data on HTML template (at user end)."
+
+  //String Interpolation
+  defination:string="String interpolation is used to display dynamic data on HTML template (at user end)."
   x:number=2;
   test(){
     const y=this.x+5;
-    return y+'}';      //String Interpolation
+    return y;
   }
 
-  isdisabled:boolean=false;    //Property Binding
+  //Property Binding
+  isdisabled:boolean=false;
   placehv:string="Enter Somthing"
   
-  isactive:boolean=true;            //Class Binding
+  //Class Binding
+  isactive:boolean=true;
   setClassvalue='inactive';
   setClass(){
     return this.setClassvalue;
   }
 
-  colorV:string='greenyellow';    //Style Binding
+  //Style Binding
+  colorV:string='greenyellow';
   fsize:string="10px";
 
-  countervalue:number=10;     //Event Binding
+  //Event Binding
+  countervalue:number=10;
 
-  increament(){                       //event Binding
+  //event Binding
+  increament(){
     this.countervalue=this.countervalue+1;
   }
   decreament(){
     this.countervalue=this.countervalue-1
   }
+  setcounter(){
+    return this.countervalue=10;
+  }
 
-  CityName="Hyderabad"   //Two way data binding
+  //Two way data binding
+  CityName="Hyderabad"
 
   Cityreset(){
     this.CityName="delhi";
   }
-  
-  Capitals="";
-  // Capitals=["Chennai","Mumbai","Bangloor"];      //*ngIf
 
-  Mobiles=["Apple","Xiaomi","Samsung","Iq","Nothig"];     //*ngFor
 
+  //1.Structural Directives
+  //*ngIf
+  // Capitals="";
+  Capitals=["Chennai","Mumbai","Bangloor"];
+
+   //*ngFor
+  Mobiles=["Apple","Xiaomi","Samsung","Iq","Nothig"];
+
+  //*ngSwitch
   num1:number=2;       //[(ngModel)]
   num2:number=3;
 
-  op:string="+";  //*ngSwitch
+  op:string="+";  
 
-  ngtestclass:string='';  //ngClass
+  ngtestclass:string='green';  //ngClass
 
   AddButtonCSSStyles() {   //ngStyle
     let CssStyless = {        
@@ -63,18 +79,20 @@ export class AppComponent {
     return CssStyless;
   }
 
-  students: any[] = [{Name: 'Preety', Branch: 'CSE', Gender: 'Female'},
-    {Name: 'Anurag', Branch: 'ETC', Gender: 'Male'},
-    { Name: 'Priyanka', Branch: 'CSE',  Gender: 'Female'}
+  students: any[] = [{Name: 'Abc', Branch: 'CSE', Gender: 'Female'},
+    {Name: '123', Branch: 'ETC', Gender: 'Male'},
+    { Name: 'xyz', Branch: 'CSE',  Gender: 'Female'}
   ]; 
   
-  who="janga Prashanth REDDY"      //Pipes
+  //Pipes
+  who="janga Prashanth REDDY"
   salary=60000;
   dob=new Date();
   cgpa=0.62;
   company="Peopletech"
 
-  Pdata="Input decorator1"   // parent to child using @Input()
+  // parent to child using @Input()
+  Pdata="Input decorator1"
   Parr=[10,20,30,40,50];
   Pdata2="Input decorator2"
   Parr2=[100,200,300,400,500];

@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';   //Input/output intslled auto
 })
 export class HeaderComponent {
   
-  @Input() d1: any;
-  @Input() p1:any;
+  @Input() cd1: any;
+  @Input() cp1:any;
     
 }
