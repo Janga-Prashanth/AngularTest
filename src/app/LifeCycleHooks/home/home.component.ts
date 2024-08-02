@@ -1,12 +1,20 @@
-import { AfterViewChecked, AfterViewInit, Component, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import {Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnChanges,AfterViewInit, AfterViewChecked,OnDestroy {
+// export class HomeComponent implements OnChanges,AfterViewInit, AfterViewChecked,OnDestroy {
+export class HomeComponent implements OnChanges, OnInit {
 
+  constructor(){
+    console.log("constructor called")
+  }
+
+  ngOnInit(): void {
+    console.log("on init called");
+  }
   ngOnChanges(changes: SimpleChanges): void {
     console.log("oninit called")
   }  
@@ -22,17 +30,9 @@ export class HomeComponent implements OnChanges,AfterViewInit, AfterViewChecked,
     this.streetname="";
   }
 
-  ngAfterViewInit(): void {
-    console.log("after view init called")
-  }
-
-  ngAfterViewChecked(): void {
-    console.log("after view checked called")
-  }
-
-  ngOnDestroy(): void {
-    console.log("ondestroy called");
-    alert("data not saved")
-  }
+  // ngOnDestroy(): void {
+  //   console.log("ondestroy called");
+  //   alert("data not saved")
+  // }
 
 }

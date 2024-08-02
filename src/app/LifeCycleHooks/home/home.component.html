@@ -5,10 +5,10 @@
             <app-onchange [cdata]="greet"></app-onchange>
             <hr>
         </div>
-        <div class="col-12">
+        <div class="col-6">
             <h6><u>3.ngDoCheck</u></h6>
-            <input type="text" [(ngModel)]="streetname">
-            <button type="submit" (click)="addstreet()">Add Street</button>
+            <div><input type="text" [(ngModel)]="streetname"></div>
+            <div><button type="submit" (click)="addstreet()">Add Street</button></div>
             <app-docheck [cstreets]="streetlist"></app-docheck>
             <hr>
         </div>
